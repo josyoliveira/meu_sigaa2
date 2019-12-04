@@ -102,10 +102,10 @@
             </div>
             <div class="form-group form-check">
                 <p><label class="form-check-label" for="preferencias">Preferências: </label></p>
-                <p><input value="Análise e Projeto de Software" type="checkbox" class="form-check-input" id="preferencias" name="preferencia" th:value="${aluno.preferencia}"> Análise e Projeto de Software</p>
-                <p><input value="Programação web 2" type="checkbox" class="form-check-input" id="preferencias" name="preferencia" th:value="${aluno.preferencia}"> Programação web 2</p>
-                <p><input value="Gestão e Qualidade de Software" type="checkbox" class="form-check-input" id="preferencias" name="preferencia" th:value="${aluno.preferencia}"> Gestão e Qualidade de Software</p>
-            </div>
+                <p><input value="Análise e Projeto de Software" type="checkbox" class="form-check-input" id="preferencias" name="preferencia" th:checked="*{preferencia}" > Análise e Projeto de Software</p>
+                <p><input value="Programação web 2" type="checkbox" class="form-check-input" id="preferencias" name="preferencia" th:checked="*{preferencia}" > Programação web 2</p>
+                <p><input value="Gestão e Qualidade de Software" type="checkbox" class="form-check-input" id="preferencias" name="preferencia" th:checked="*{preferencia}"> Gestão e Qualidade de Software</p>
+            </div> 
 
             <button type="submit" class="btn btn-primary" onclick="return validarForm();">SALVAR</button>
             <button type="reset" class="btn btn-primary" id="limpar" onclick="limparForm()">LIMPAR</button>
