@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!--<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript">
+        function limparForm() {
+            document.getElementById('myForm').reset();
+        }
+
+        function validarForm() {
+
+            var nome = document.getElementById('nome').value;
+            var senha = document.getElementById('senha').value;
+            var confirSenha = document.getElementById('confirSenha').value;
+            var check = document.getElementById('preferencias');
+
+            if (document.getElementById('nome').value == "" || nome.length < 3) {
+                alert("Insira seu nome com pelo menos 3 caracteres");
+                document.getElementById('nome').focus();
+
+                return false;
+            }
+
+            else if (document.getElementById('email').value == "" || document.getElementById('email').value.indexOf('@') == -1
+                || document.getElementById('email').value.indexOf('.') == -1) {
+                alert("Preencha o seu E-MAIL corretamente");
+                document.getElementById('nome').focus();
+
+                return false;
+            }
+            else if (document.getElementById('senha').value == "" || senha.length < 6) {
+                alert("A senha deve ter pelo menos 6 caracteres");
+                document.getElementById('senha').focus();
+
+                return false;
+            }
+
+            else if (document.getElementById('confirSenha').value == "" || confirSenha.length < 6) {
+                alert('Preencha o campo repetir senha.');
+                document.getElementById('confirSenha').focus();
+            }
+
+            else if (senha != confirSenha) {
+                alert("Sua senha está diferente.");
+                document.getElementById('confirSenha').focus();
+                return false;
+            }
+
+            else if (check.checked == false) {
+                alert("Informe uma preferência.");
+                return false;
+            }
+        }  
+    </script>
+    <style>
+        body {
+            width: 50%;
+            height: 50%;
+            margin: 0 auto;
+            background-color: #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <form id="myForm" method="POST" action="/aluno/salva">
+            <div class="form-group">
+                    <label for="matricula">Matricula: </label>
+                    <input type="text" class="form-control" id="matricula" name="matricula"th:value="${aluno.matricula}" >
+            </div>
+            <div class="form-group">
+                <label for="nome">Nome: </label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" th:value="${aluno.nome}" >
+            </div>
+            <div class="form-group">
+                <label for="email">Email: </label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="email@gmail.com" th:value="${aluno.email}" >
+            </div>
+             <div class="form-group">
+                <label for="senha">Senha: </label>
+                <input type="password" class="form-control" id="senha" name="senha" th:value="${aluno.senha}" >
+            </div>
+            <div class="form-group">
+                <label for="confirSenha">Repertir senha: </label>
+                <input type="password" class="form-control" id="confirSenha" name="repetirSenha" th:value="${aluno.repetirSenha}" >
+            </div>
+            <div class="form-group">
+                <label for="modulo">Módulo: </label>
+                <select class="form-control" id="modulo" name="modulo" th:value="${aluno.modulo}">
+                    <option value="Primeiro">Primeiro</option>
+                    <option value="Segundo">Segundo</option>
+                    <option value="Terceiro">Terceiro</option>
+                </select>
+            </div>
+            <div class="form-group form-check">
+                <p><label class="form-check-label" for="preferencias">Preferências: </label></p>
+                <p><input value="Análise e Projeto de Software" type="checkbox" class="form-check-input" id="preferencias" name="preferencia" th:value="${aluno.preferencia}"> Análise e Projeto de Software</p>
+                <p><input value="Programação web 2" type="checkbox" class="form-check-input" id="preferencias" name="preferencia" th:value="${aluno.preferencia}"> Programação web 2</p>
+                <p><input value="Gestão e Qualidade de Software" type="checkbox" class="form-check-input" id="preferencias" name="preferencia" th:value="${aluno.preferencia}"> Gestão e Qualidade de Software</p>
+            </div>
+
+            <button type="submit" class="btn btn-primary" onclick="return validarForm();">SALVAR</button>
+            <button type="reset" class="btn btn-primary" id="limpar" onclick="limparForm()">LIMPAR</button>
+        </form>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        </div>
+</body>
+
+</html>
