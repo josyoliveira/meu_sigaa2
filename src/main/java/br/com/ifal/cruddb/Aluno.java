@@ -16,7 +16,7 @@ public class Aluno {
     private String senha;
     private String repetirSenha;
     private String modulo;
-    private String preferencias;
+    private String[] preferencia;
 
     public long getMatricula() {
         return matricula;
@@ -66,13 +66,15 @@ public class Aluno {
         this.modulo = modulo;
     }
 
-    public String getPreferencias() {
-        return preferencias;
+    public String[] getPreferencia() {
+        return preferencia;
     }
 
-    public void setPreferencias(String preferencias) {
-        this.preferencias = preferencias;
+    public void setPreferencia(String[] preferencia) {
+        this.preferencia = preferencia;
     }
+
+
 
     
 }

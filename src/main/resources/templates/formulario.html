@@ -73,8 +73,8 @@
     <div class="container">
         <form id="myForm" method="POST" action="/aluno/salva">
             <div class="form-group">
-                    <label for="matricula">Matricula: </label>
-                    <input type="text" class="form-control" id="matricula" name="matricula"th:value="${aluno.matricula}" >
+                <label for="matricula">Matricula: </label>
+                <input type="text" class="form-control" id="matricula" name="matricula" th:value="${aluno.matricula}" >
             </div>
             <div class="form-group">
                 <label for="nome">Nome: </label>
@@ -100,12 +100,18 @@
                     <option value="Terceiro">Terceiro</option>
                 </select>
             </div>
-            <div class="form-group form-check">
+            <!-- <div class="form-group form-check">
                 <p><label class="form-check-label" for="preferencias">Preferências: </label></p>
-                <p><input value="Análise e Projeto de Software" type="checkbox" class="form-check-input" id="preferencias" name="preferencia" th:checked="*{preferencia}" > Análise e Projeto de Software</p>
-                <p><input value="Programação web 2" type="checkbox" class="form-check-input" id="preferencias" name="preferencia" th:checked="*{preferencia}" > Programação web 2</p>
-                <p><input value="Gestão e Qualidade de Software" type="checkbox" class="form-check-input" id="preferencias" name="preferencia" th:checked="*{preferencia}"> Gestão e Qualidade de Software</p>
-            </div> 
+                
+                <p><input value="Análise e Projeto de Software" type="checkbox" class="form-check-input"
+                     id="preferencias" name="preferencia" th:checked="*{preferencia}" th:value="${aluno.}"> Análise e Projeto de Software</p>
+                
+                <p><input value="Programação web 2" type="checkbox" class="form-check-input" 
+                    id="preferencias" name="preferencia" th:checked="*{preferencia}" > Programação web 2</p>
+                
+                <p><input value="Gestão e Qualidade de Software" type="checkbox" class="form-check-input"
+                     id="preferencias" name="preferencia" th:checked="*{preferencia}"> Gestão e Qualidade de Software</p>
+            </div>  -->
 
             <button type="submit" class="btn btn-primary" onclick="return validarForm();">SALVAR</button>
             <button type="reset" class="btn btn-primary" id="limpar" onclick="limparForm()">LIMPAR</button>
