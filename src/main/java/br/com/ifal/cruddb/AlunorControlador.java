@@ -1,6 +1,7 @@
 package br.com.ifal.cruddb;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -31,7 +32,12 @@ public class AlunorControlador {
         return resposta;
     }
 
-    
+    @RequestMapping("/aluno/excluir/{matricula}")
+    public ModelAndView excluir(@PathVariable(name = "matricula") long matricula){
+        ar.deleteById(matricula);
+        return new ModelAndView("redirect:/aluno/listar");
+
+    }
 
 
     

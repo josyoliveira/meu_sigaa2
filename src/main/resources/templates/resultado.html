@@ -14,6 +14,9 @@
         td {
             padding: 12px;
         }
+        a.link{
+            color:cornsilk;
+        }
     </style>
 </head>
 
@@ -36,10 +39,11 @@
                 <td th:text="${aluno.email}">
                 <td th:text="${aluno.modulo}"> 
                 <!-- <td th:text="${aluno.preferencia}"> -->
+                <td><a th:href="@{'/aluno/excluir/' + ${aluno.matricula}}">Excluir</a></td>
             </tr>
         </tbody>
     </table>
-    <button onclick="history.go(-1);" class="btn btn-primary">Voltar </button>
+    <button class="btn btn-primary"><a href="/aluno/form" class="link">Novo Aluno</a> </button>
     <!-- <p th:text="'id: ' + ${greeting.id}">
     <p th:text="'content: ' + ${greeting.content}">
     <a href="/greeting">Submit another message</a> -->
