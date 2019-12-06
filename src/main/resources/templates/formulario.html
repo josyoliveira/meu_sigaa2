@@ -18,8 +18,9 @@
             var nome = document.getElementById('nome').value;
             var senha = document.getElementById('senha').value;
             var confirSenha = document.getElementById('confirSenha').value;
-            var check = document.getElementById('preferencias');
-
+            var check1 = document.getElementById('preferencia1');
+            var check2 = document.getElementById('preferencia2');
+            var check3 = document.getElementById('preferencia3');
             if (document.getElementById('nome').value == "" || nome.length < 3) {
                 alert("Insira seu nome com pelo menos 3 caracteres");
                 document.getElementById('nome').focus();
@@ -100,18 +101,18 @@
                     <option value="Terceiro">Terceiro</option>
                 </select>
             </div>
-            <!-- <div class="form-group form-check">
+            <div class="form-group form-check">
                 <p><label class="form-check-label" for="preferencias">Preferências: </label></p>
                 
                 <p><input value="Análise e Projeto de Software" type="checkbox" class="form-check-input"
-                     id="preferencias" name="preferencia" th:checked="*{preferencia}" th:value="${aluno.}"> Análise e Projeto de Software</p>
+                     id="preferencia1" name="preferencia" th:checked="*{preferencia}"> Análise e Projeto de Software</p>
                 
                 <p><input value="Programação web 2" type="checkbox" class="form-check-input" 
-                    id="preferencias" name="preferencia" th:checked="*{preferencia}" > Programação web 2</p>
+                    id="preferencia2" name="preferencia" th:checked="*{preferencia}" > Programação web 2</p>
                 
                 <p><input value="Gestão e Qualidade de Software" type="checkbox" class="form-check-input"
-                     id="preferencias" name="preferencia" th:checked="*{preferencia}"> Gestão e Qualidade de Software</p>
-            </div>  -->
+                     id="preferencia3" name="preferencia" th:checked="*{preferencia}"> Gestão e Qualidade de Software</p>
+            </div>
 
             <button type="submit" class="btn btn-primary" onclick="return validarForm();">SALVAR</button>
             <button type="reset" class="btn btn-primary" id="limpar" onclick="limparForm()">LIMPAR</button>

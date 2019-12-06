@@ -30,7 +30,7 @@
                 <th>Nome</th>
                 <th>Email</th>
                 <th>Módulo</th>
-                <!-- <th>Preferências</th> -->
+                <th>Preferências</th>
             </tr>
         </thead>
         <tbody>
@@ -39,7 +39,7 @@
                 <td th:text="${aluno.nome}">    
                 <td th:text="${aluno.email}">
                 <td th:text="${aluno.modulo}"> 
-                <!-- <td th:text="${aluno.preferencia}"> -->
+                <td th:text="${aluno.preferencia}">
                 <td><a th:href="@{'/aluno/atualizar/' + ${aluno.matricula}}">Atualizar</a></td>
                 <td><a th:href="@{'/aluno/excluir/' + ${aluno.matricula}}">Excluir</a></td>
             </tr>
