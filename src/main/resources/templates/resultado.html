@@ -40,8 +40,8 @@
                 <td th:text="${aluno.email}">
                 <td th:text="${aluno.modulo}"> 
                 <td th:text="${aluno.preferencia}">
-                <td><a th:href="@{'/aluno/atualizar/' + ${aluno.matricula}}">Atualizar</a></td>
-                <td><a th:href="@{'/aluno/excluir/' + ${aluno.matricula}}">Excluir</a></td>
+                <td><a th:href="@{'/aluno/atualizar/' + ${aluno.matricula}}"><img width="20px" src="../atualizar.jpg"></a></td>
+                <td><a th:href="@{'/aluno/excluir/' + ${aluno.matricula}}"><img width="20px" src="../excuir.png"></a></td>
             </tr>
         </tbody>
     </table>
