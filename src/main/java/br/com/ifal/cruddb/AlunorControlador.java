@@ -39,6 +39,13 @@ public class AlunorControlador {
 
     }
 
+    @RequestMapping("/aluno/atualizar/{matricula}")
+    public ModelAndView atualizar(@PathVariable(name = "matricula") long matricula){
+        ModelAndView resposta = new ModelAndView("formulario.html");
+        resposta.addObject("aluno", ar.findById(matricula).get());
+        return resposta;
+    }
+
 
     
 }

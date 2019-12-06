@@ -72,7 +72,7 @@
 
     <div class="container">
         <form id="myForm" method="POST" action="/aluno/salva">
-            <div class="form-group">
+            <div class="form-group" hidden>
                 <label for="matricula">Matricula: </label>
                 <input type="text" class="form-control" id="matricula" name="matricula" th:value="${aluno.matricula}" >
             </div>
