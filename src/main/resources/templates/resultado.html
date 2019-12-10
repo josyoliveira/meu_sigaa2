@@ -7,10 +7,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
-        table {
-            border: 1px solid #cccccc;
+        body {
+            width: 80%;
+            height: 80%;
+            margin: 0 auto;
+            background-color: #cccccc;
         }
-
+        table{
+            background-color: #ffffff;
+        }
         td {
             padding: 12px;
         }
@@ -40,12 +45,12 @@
                 <td th:text="${aluno.email}">
                 <td th:text="${aluno.modulo}"> 
                 <td th:text="${aluno.preferencia}">
-                <td><a th:href="@{'/aluno/atualizar/' + ${aluno.matricula}}"><img width="20px" src="../atualizar.jpg"></a></td>
-                <td><a th:href="@{'/aluno/excluir/' + ${aluno.matricula}}"><img width="20px" src="../excuir.png"></a></td>
+                <td><a th:href="@{'/aluno/atualizar/' + ${aluno.matricula}}"><img width="30px" src="../atualizar.svg"></a></td>
+                <td><a th:href="@{'/aluno/excluir/' + ${aluno.matricula}}"><img width="30px" src="../excluir1.svg"></a></td>
             </tr>
         </tbody>
     </table>
-    <button class="btn btn-primary"><a href="/aluno/form" class="link">Novo Aluno</a> </button>
+    <a href="/aluno/form" class="link"><img width="30px" src="../add.png"></a>
     <!-- <p th:text="'id: ' + ${greeting.id}">
     <p th:text="'content: ' + ${greeting.content}">
     <a href="/greeting">Submit another message</a> -->
