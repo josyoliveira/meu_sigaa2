@@ -45,6 +45,7 @@
             else if (document.getElementById('confirSenha').value == "" || confirSenha.length < 6) {
                 alert('Preencha o campo repetir senha.');
                 document.getElementById('confirSenha').focus();
+                return false;
             }
 
             else if (senha != confirSenha) {
