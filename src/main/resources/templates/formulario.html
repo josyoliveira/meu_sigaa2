@@ -18,9 +18,8 @@
             var nome = document.getElementById('nome').value;
             var senha = document.getElementById('senha').value;
             var confirSenha = document.getElementById('confirSenha').value;
-            var check1 = document.getElementById('preferencia1');
-            var check2 = document.getElementById('preferencia2');
-            var check3 = document.getElementById('preferencia3');
+            var check = document.getElementById('preferencia');
+           
             if (document.getElementById('nome').value == "" || nome.length < 3) {
                 alert("Insira seu nome com pelo menos 3 caracteres");
                 document.getElementById('nome').focus();
@@ -106,13 +105,13 @@
                 <p><label class="form-check-label" for="preferencias">Preferências: </label></p>
                 
                 <p><input value="Análise e Projeto de Software" type="checkbox" class="form-check-input"
-                     id="preferencia1" name="preferencia" th:checked="*{preferencia}"> Análise e Projeto de Software</p>
+                     id="preferencia" name="preferencia" th:checked="*{preferencia}"> Análise e Projeto de Software</p>
                 
                 <p><input value="Programação web 2" type="checkbox" class="form-check-input" 
-                    id="preferencia2" name="preferencia" th:checked="*{preferencia}" > Programação web 2</p>
+                    id="preferencia" name="preferencia" th:checked="*{preferencia}" > Programação web 2</p>
                 
                 <p><input value="Gestão e Qualidade de Software" type="checkbox" class="form-check-input"
-                     id="preferencia3" name="preferencia" th:checked="*{preferencia}"> Gestão e Qualidade de Software</p>
+                     id="preferencia" name="preferencia" th:checked="*{preferencia}"> Gestão e Qualidade de Software</p>
             </div>
 
             <button type="submit" class="btn btn-dark" onclick="return validarForm();">SALVAR</button>
