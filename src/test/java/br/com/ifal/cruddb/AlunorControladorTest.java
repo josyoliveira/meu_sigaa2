@@ -39,5 +39,14 @@ public class AlunorControladorTest extends AbstractTest{
       aluno.setSenha("123456");
       aluno.setRepetirSenha("123456");
       aluno.setModulo("Terceiro");
+
+      String inputJson = super.mapToJson(aluno);
+      MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(uri)
+      .contentType(MediaType.APPLICATION_JSON_VALUE).content(inputJson)).andReturn();
+
+      int statusRetornando = mvcResult.getResponse().getStatus();
+      int statusEsperado = 302;
+
+      assertEquals(statusEsperado, statusRetornando);
     }
 }
