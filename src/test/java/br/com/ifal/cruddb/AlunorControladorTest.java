@@ -29,4 +29,15 @@ public class AlunorControladorTest extends AbstractTest{
 
         assertEquals(statusEsperado, statusRetornando);
     }
+
+    @Test
+    public void testeCriancaoDeAlunos() throws Exception {
+      String uri = "/aluno/salva";
+      Aluno aluno = new Aluno();
+      aluno.setMatricula(123);
+      aluno.setNome("Ana");
+      aluno.setSenha("123456");
+      aluno.setRepetirSenha("123456");
+      aluno.setModulo("Terceiro");
+    }
 }
